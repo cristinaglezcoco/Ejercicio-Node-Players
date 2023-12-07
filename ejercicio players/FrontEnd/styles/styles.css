@@ -21,7 +21,7 @@ body {
 }
 body h1 {
   margin-top: 40px;
-  padding: 20px 30px;
+  padding: 10px 30px;
   font-size: 60px;
   color: rgb(6, 36, 4);
   background-color: rgba(255, 255, 255, 0.57);
@@ -38,11 +38,11 @@ body .players-info {
   align-items: center;
 }
 body .players-info .player {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   background-image: url(../assets/pelota.png);
   background-position: center;
-  border: 2px solid white;
+  background-size: cover;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -54,15 +54,17 @@ body .players-info .player {
 body .players-info .player:hover > .listPlayer {
   opacity: 1;
   transition: all ease 1s;
+  transform: scale(100%);
 }
 body .players-info .player:hover > p {
   opacity: 0;
 }
 body .players-info .player p {
-  width: 165px;
-  color: black;
   position: absolute;
-  transform: translateY(10%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
   font-size: 25px;
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.57);
@@ -70,7 +72,6 @@ body .players-info .player p {
   text-align: center;
 }
 body .players-info .player .listPlayer {
-  position: absolute;
   display: flex;
   flex-direction: column;
   color: black;
@@ -82,4 +83,36 @@ body .players-info .player .listPlayer {
   opacity: 0;
   background-color: rgba(255, 255, 255, 0.57);
   border-radius: 10px;
+  transform: scale(0);
+}
+
+@media screen and (max-width: 992px) {
+  body h1 {
+    font-size: 50px;
+  }
+  body .players-info .player {
+    width: 160px;
+    height: 160px;
+  }
+  body .players-info .player p {
+    font-size: 20px;
+  }
+  body .players-info .player .listPlayer {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 576px) {
+  body h1 {
+    font-size: 40px;
+  }
+  body .players-info .player {
+    width: 120px;
+    height: 120px;
+  }
+  body .players-info .player p {
+    font-size: 15px;
+  }
+  body .players-info .player .listPlayer {
+    font-size: 10px;
+  }
 }/*# sourceMappingURL=styles.css.map */
